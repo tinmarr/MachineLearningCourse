@@ -10,7 +10,7 @@
       "name": "Launch Program",
       "program": "${command:AskForProgramName}",
       "octave": "octave-cli",
-      "sourceFolder": "${workspaceFolder}/ex2",
+      "sourceFolder": "${workspaceFolder}/ex3",
       "autoTerminate": true
     },
   ]
