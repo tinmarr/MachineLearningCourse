@@ -59,26 +59,35 @@ Theta2_grad = zeros(size(Theta2));
 %         Hint: You can implement this around the code for
 %               backpropagation. That is, you can compute the gradients for
 %               the regularization separately and then add them to Theta1_grad
-%               and Theta2_grad from Part 2.
-%
+%               and Theta2_grad from Part 2
 
+X = [ones(m,1), X];
+d1 = zeros(size(Theta1));
+d2 = zeros(size(Theta2));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+for i = 1:m
+  % Activation
+  a1 = X(i,:)';
+  z2 = Theta1 * a1;
+  a2 = [1; sigmoid(z2)];
+  z3 = Theta2 * a2;
+  a3 = sigmoid(z3);
+  yt = zeros(num_labels,1);
+  yt(y(i)) = 1;
+  % Cost
+  J = J + sum((-yt' * log(a3)) - ((1 - yt)' * log(1 - a3)));
+  % Error
+  d3t = a3 - yt;
+  d2t = Theta2' * d3t .* sigmoidGradient([1; z2]);
+  d1 = d1 + (d2t(2:end) * a1');
+  d2 = d2 + (d3t * a2');
+end
+J = (1 / m) * J;
+J = J + ((lambda / (2 * m)) * (sum(sum(Theta1(:,2:end) .^ 2)) + sum(sum(Theta2(:,2:end) .^ 2))));
+Theta1_grad(:,1) = (1 / m) * d1(:,1);
+Theta1_grad(:,2:end) = (1 / m) * d1(:,2:end) + (lambda / m) * Theta1(:,2:end);
+Theta2_grad(:,1) = (1 / m) * d2(:,1);
+Theta2_grad(:,2:end) = (1 / m) * d2(:,2:end) + (lambda / m) * Theta2(:,2:end);
 
 % -------------------------------------------------------------
 

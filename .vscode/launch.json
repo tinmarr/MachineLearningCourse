@@ -8,10 +8,10 @@
       "type": "OctaveDebugger",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${command:AskForProgramName}",
+      "program": "ex4.m",
       "octave": "octave-cli",
-      "sourceFolder": "${workspaceFolder}/ex3",
+      "sourceFolder": "${workspaceFolder}/ex4",
       "autoTerminate": true
-    },
+    }
   ]
 }
