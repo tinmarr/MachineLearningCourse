@@ -8,9 +8,9 @@
       "type": "OctaveDebugger",
       "request": "launch",
       "name": "Launch Program",
-      "program": "ex4.m",
+      "program": "ex5.m",
       "octave": "octave-cli",
-      "sourceFolder": "${workspaceFolder}/ex4",
+      "sourceFolder": "${workspaceFolder}/ex5",
       "autoTerminate": true
     }
   ]
