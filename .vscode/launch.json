@@ -8,9 +8,9 @@
       "type": "OctaveDebugger",
       "request": "launch",
       "name": "Launch Program",
-      "program": "ex5.m",
+      "program": "ex6_spam.m",
       "octave": "octave-cli",
-      "sourceFolder": "${workspaceFolder}/ex5",
+      "sourceFolder": "${workspaceFolder}/ex6",
       "autoTerminate": true
     }
   ]
