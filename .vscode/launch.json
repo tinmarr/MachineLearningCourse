@@ -8,9 +8,9 @@
       "type": "OctaveDebugger",
       "request": "launch",
       "name": "Launch Program",
-      "program": "ex7_pca.m",
+      "program": "ex8_cofi.m",
       "octave": "octave-cli",
-      "sourceFolder": "${workspaceFolder}/ex7",
+      "sourceFolder": "${workspaceFolder}/ex8",
       "autoTerminate": true
     }
   ]
